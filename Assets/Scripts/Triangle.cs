@@ -12,21 +12,24 @@ public class Triangle : MonoBehaviour
     public float bulletForce = 20f;
 
     // int that stores rate of fire for weapon in units of milliseconds
-    public int rateOfFire = 5000;
+    public int rateOfFire = 50;
+    public int counter;
 
 
     // Start is called before the first frame update
     void Start()
     {
+	    counter = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        /*if (counter >= rateOfFire)
         {
-            ShootTri();
-        }
+            Debug.Log("ShootTri()");
+            counter = 0;
+        }*/
     }
 
     /*void Timer(int interval)
@@ -54,5 +57,16 @@ public class Triangle : MonoBehaviour
         rb.AddForce(firePointTop.up * bulletForce, ForceMode2D.Impulse);
         rb2.AddForce((firePointLeft.right * -1) * bulletForce, ForceMode2D.Impulse);
         rb3.AddForce((firePointRight.right) * bulletForce, ForceMode2D.Impulse);
+    }
+
+    void FixedUpdate()
+    {
+	    counter += 1;
+	    Debug.Log(counter);
+        if (counter >= 50)
+        {
+            ShootTri();
+            counter = 0;
+        }
     }
 }
