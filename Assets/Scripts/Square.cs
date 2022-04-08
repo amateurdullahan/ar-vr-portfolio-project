@@ -11,20 +11,26 @@ public class Square : MonoBehaviour
     public Transform firePointBottom;
     public GameObject bulletPrefab;
     public float bulletForce = 20f;
-    public int sides = 0;
+    private int sides = 0;
+    public int counter;
+    public int rateOfFire;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        counter = 0;
+        rateOfFire = 100;
+        Debug.Log("We've started");
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        counter += 1;
+        if (counter >= rateOfFire)
+        {
             if (sides == 0)
             {
                 SquareShoot(firePointTop);
@@ -45,6 +51,8 @@ public class Square : MonoBehaviour
                 SquareShoot(firePointLeft);
                 sides = 0;
             }
+            counter = 0;
+        }
     }
 
     void SquareShoot(Transform firePoint)
