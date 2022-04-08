@@ -1361,7 +1361,7 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 8644945066282636656, guid: 063d510e05b358540853000804f881c8, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8644945066282636656, guid: 063d510e05b358540853000804f881c8, type: 3}
       propertyPath: rateOfFire
@@ -1490,7 +1490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9206905655472895805, guid: cd28d0e25381095408a6d34f32d1e2e6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd28d0e25381095408a6d34f32d1e2e6, type: 3}
