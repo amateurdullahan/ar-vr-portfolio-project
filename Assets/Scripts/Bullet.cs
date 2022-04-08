@@ -6,14 +6,12 @@ public class Bullet : MonoBehaviour
 {
     public int damage = 5;
 
-    void OnTriggerEnter2D(Collider2D hitInfo)
+    void OnCollisionEnter2D(Collision2D hitInfo)
     {
-        Debug.Log("1");
-        Enemy enemy = hitInfo.GetComponent<Enemy>();
-        if (enemy != null)
+        
+        if (hitInfo.gameObject.tag == "Enemy")
         {
-            Debug.Log("hit");
-            enemy.TakeDamage(damage);
+            hitInfo.gameObject.SendMessage("TakeDamage", damage);
         }
 
         Destroy(gameObject);

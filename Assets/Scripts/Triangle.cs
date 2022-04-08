@@ -63,7 +63,6 @@ public class Triangle : MonoBehaviour
     void FixedUpdate()
     {
 	    counter += 1;
-	    Debug.Log(counter);
         if (counter >= rateOfFire)
         {
             ShootTri();
