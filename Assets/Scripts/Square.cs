@@ -22,7 +22,6 @@ public class Square : MonoBehaviour
     {
         counter = 0;
         rateOfFire = 100;
-        Debug.Log("We've started");
     }
 
    
