@@ -56,7 +56,7 @@ public class Octagon : MonoBehaviour
     {
         if (triggerInfo.gameObject.tag == "Enemy")
         {
-            enemy.moveEnemy();
+            //enemy.moveEnemy();
         }
     }
 
