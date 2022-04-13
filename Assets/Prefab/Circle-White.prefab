@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1397367495546636606}
   - component: {fileID: 1397367495546636607}
   - component: {fileID: 1397367495546636604}
+  - component: {fileID: 5045969107925319353}
   m_Layer: 0
   m_Name: Circle-White
   m_TagString: Untagged
@@ -152,3 +153,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1
   damage: 5
+--- !u!111 &5045969107925319353
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397367495546636602}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a30ec5344218ef54995436b4c100c235, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 811d2767801947042ae2faff751a3120, type: 2}
+  - {fileID: 7400000, guid: a30ec5344218ef54995436b4c100c235, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

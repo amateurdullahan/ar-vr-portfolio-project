@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Circle : MonoBehaviour
 {
-    public int radius = 1;
-    public int damage = 5;
+    public int damage = 1;
 
     
     // Start is called before the first frame update
@@ -25,13 +24,12 @@ public class Circle : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D triggerInfo)
+    void OnTriggerStay2D(Collider2D triggerInfo)
     {
         
         if (triggerInfo.gameObject.tag == "Enemy")
         {
             triggerInfo.gameObject.SendMessage("TakeDamage", damage);
-            
         }
     }
 }

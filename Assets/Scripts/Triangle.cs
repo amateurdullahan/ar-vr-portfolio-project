@@ -10,42 +10,14 @@ public class Triangle : MonoBehaviour
     public Transform firePointRight;
     public GameObject bulletPrefab;
     public float bulletForce = 20f;
-
-    // int that stores rate of fire for weapon in units of milliseconds
     public int rateOfFire;
     public int counter;
 
-
-    // Start is called before the first frame update
     void Start()
     {
 	    counter = 0;
         rateOfFire = 50;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        /*if (counter >= rateOfFire)
-        {
-            Debug.Log("ShootTri()");
-            counter = 0;
-        }*/
-    }
-
-    /*void Timer(int interval)
-    {
-        int i;
-        for (i = 0; i < interval; i++)
-        {
-            if (i == interval)
-            {
-                ShootTri();
-                i = 0;
-            }
-        }
-
-    }*/
 
     void ShootTri()
     {

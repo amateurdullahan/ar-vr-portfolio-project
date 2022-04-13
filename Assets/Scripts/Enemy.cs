@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
 
     void LateUpdate()
     {
+        //Correctly orients enemy towards player to the right or left
         if (rb.velocity.x > 0)
         {
             transform.localScale = new Vector3(localScale.x, localScale.y, localScale.z);

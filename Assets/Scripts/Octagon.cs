@@ -29,6 +29,10 @@ public class Octagon : MonoBehaviour
         counter += 1;
     }
 
+    //ontriggerenter get speed
+    //ontriggerstay change speed
+    //ontriggerexit change back speed???
+    
     void OnTriggerEnter2D(Collider2D triggerInfo)
     {
         
