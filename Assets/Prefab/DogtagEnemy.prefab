@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32ee60fb2a191c4c98cd53f2297b1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 9206905655472895805, guid: cd28d0e25381095408a6d34f32d1e2e6, type: 3}
   moveSpeed: 1
   health: 10
 --- !u!50 &4753659683583510011

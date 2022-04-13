@@ -39,29 +39,18 @@ public class Octagon : MonoBehaviour
         if (triggerInfo.gameObject.tag == "Enemy")
         {
             enemy = triggerInfo.GetComponent<Enemy>();
-            if (enemy.moveSpeed != 0)
-            {
-                enemySpeed = enemy.moveSpeed;
-            }
-            if (counter >= rateOfFire)
-            {
-                enemy.moveSpeed = 0;
-                counter = 0;
-            }
-            else
-            {
-                enemy.moveSpeed = enemySpeed;
-            } 
-            
+            enemySpeed = enemy.moveSpeed;
         }
+    }
+
+    void OnTriggerStay2D(Collider2D triggerInfo)
+    {
+        enemy.moveSpeed = 0;
     }
     
     void OnTriggerExit2D(Collider2D triggerInfo)
     {
-        if (triggerInfo.gameObject.tag == "Enemy")
-        {
-            //enemy.moveEnemy();
-        }
+        enemy.moveSpeed = enemySpeed;
     }
 
 }
