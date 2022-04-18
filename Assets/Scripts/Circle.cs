@@ -5,12 +5,13 @@ using UnityEngine;
 public class Circle : MonoBehaviour
 {
     public int damage = 1;
+    private int counter;
 
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        counter = 0;
     }
 
     // Update is called once per frame
@@ -21,7 +22,7 @@ public class Circle : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        counter += 1;
     }
 
     void OnTriggerStay2D(Collider2D triggerInfo)
@@ -29,7 +30,11 @@ public class Circle : MonoBehaviour
         
         if (triggerInfo.gameObject.tag == "Enemy")
         {
-            triggerInfo.gameObject.SendMessage("TakeDamage", damage);
+            if (counter >= 50)
+            {
+                triggerInfo.gameObject.SendMessage("TakeDamage", damage);
+                counter = 0;
+            }
         }
     }
 }

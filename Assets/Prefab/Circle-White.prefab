@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1397367495546636606}
   - component: {fileID: 1397367495546636607}
   - component: {fileID: 1397367495546636604}
-  - component: {fileID: 5045969107925319353}
+  - component: {fileID: 7818416904890976468}
   m_Layer: 0
   m_Name: Circle-White
   m_TagString: Untagged
@@ -151,22 +151,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 743ca98eb0de81d4bad5fbeb854e74ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
   damage: 5
---- !u!111 &5045969107925319353
-Animation:
+--- !u!95 &7818416904890976468
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397367495546636602}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: a30ec5344218ef54995436b4c100c235, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 811d2767801947042ae2faff751a3120, type: 2}
-  - {fileID: 7400000, guid: a30ec5344218ef54995436b4c100c235, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7d43af1dda7fefd409e42cc0efd2176c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

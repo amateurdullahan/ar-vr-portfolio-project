@@ -10,7 +10,8 @@ public class Enemy : MonoBehaviour
     private Vector3 directionToPlayer;
     private Vector3 localScale;
     public int health = 10;
-
+    public GameObject playerStats;
+    //public int maxHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -61,5 +62,14 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+
+        if (hitInfo.gameObject.tag == "Player")
+        {
+            hitInfo.gameObject.SendMessage("TakeDamage", 5);
+        }
     }
 }
