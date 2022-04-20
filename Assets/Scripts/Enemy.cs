@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour
     private Vector3 directionToPlayer;
     private Vector3 localScale;
     public int health = 10;
-    public GameObject playerStats;
     //public int maxHealth;
 
     // Start is called before the first frame update
@@ -54,13 +53,15 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
         if (health <= 0)
-        {
+        {            
             Die();
         }
     }
 
     void Die()
     {
+        var get = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+        get.GainExperience(5);
         Destroy(gameObject);
     }
 
