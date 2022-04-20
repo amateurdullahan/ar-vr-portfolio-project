@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerCam : MonoBehaviour
+{
+    public Transform player;
+    Vector3 offest;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        offest = new Vector3(6, 6, 6);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    void FixedUpdate()
+    {
+        transform.position = new Vector3(player.position.x + offest.x, player.position.y + offest.y, player.position.z + offest.z);
+    }
+}

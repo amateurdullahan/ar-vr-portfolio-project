@@ -23,7 +23,7 @@ public class Spawner : MonoBehaviour
     void FixedUpdate()
     {
         counter += 1;
-        if (counter % 750 == 9)
+        if (counter % 750 == 0)
         {
             WaveSpawn();
         }

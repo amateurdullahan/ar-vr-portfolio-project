@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         localScale = transform.localScale;
+        var getP = GameObject.FindWithTag("Player");
+        player = getP;
     }
 
     // Update is called once per frame
