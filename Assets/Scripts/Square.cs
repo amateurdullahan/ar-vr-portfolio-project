@@ -58,9 +58,10 @@ public class Square : MonoBehaviour
             }
             counter = 0;
         }
-        if (player.level > sLevel)
+        var get = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+        if (get.level > sLevel)
         {
-            sLevel = player.level;
+            sLevel = get.level;
             SquareLevel(sLevel);
         }
     }

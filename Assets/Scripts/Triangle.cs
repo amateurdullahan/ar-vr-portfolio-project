@@ -12,7 +12,6 @@ public class Triangle : MonoBehaviour
     public float bulletForce = 20f;
     public int rateOfFire;
     public int counter;
-    public GameObject player;
     public int tLevel;
     
 
@@ -20,8 +19,6 @@ public class Triangle : MonoBehaviour
     {
 	    counter = 0;
         rateOfFire = 100;
-        var getP = GameObject.FindWithTag("Player");
-        player = getP;
         tLevel = 1;
     }
 
@@ -46,11 +43,11 @@ public class Triangle : MonoBehaviour
             ShootTri();
             counter = 0;
         }
-
-        if (player.level > tLevel)
+        var get = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+        if (get.level > tLevel)
         {
-            tLevel = player.level
-            TriangelLevel(tLevel);
+            tLevel = get.level;
+            TriangleLevel(tLevel);
         }
     }
 
