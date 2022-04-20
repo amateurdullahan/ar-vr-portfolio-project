@@ -14,6 +14,9 @@ public class Square : MonoBehaviour
     private int sides = 0;
     public int counter;
     public int rateOfFire;
+    //Weapon level
+    public int sLevel;
+    public GameObject player;
 
 
 
@@ -22,10 +25,13 @@ public class Square : MonoBehaviour
     {
         counter = 0;
         rateOfFire = 100;
+        var getP = GameObject.FindWithTag("Player");
+        player = getP;
+        sLevel = 1;
     }
 
    
-    void Update()
+    void FixedUpdate()
     {
         counter += 1;
         if (counter >= rateOfFire)
@@ -52,6 +58,11 @@ public class Square : MonoBehaviour
             }
             counter = 0;
         }
+        if (player.level > sLevel)
+        {
+            sLevel = player.level;
+            SquareLevel(sLevel);
+        }
     }
 
     void SquareShoot(Transform firePoint)
@@ -75,6 +86,11 @@ public class Square : MonoBehaviour
         {
             rb.AddForce((firePoint.right * -1) * bulletForce, ForceMode2D.Impulse);
         }
+    }
+
+    void SquareLevel(int level)
+    {
+        rateOfFire = rateOfFire - (level * 10);
     }
 }
 
