@@ -17,21 +17,17 @@ public class Enemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         localScale = transform.localScale;
-        //var getP = GameObject.FindWithTag("Player");
-        //player = getP;
+        var getP = GameObject.FindWithTag("Player");
+        player = getP;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void FixedUpdate()
     {
         MoveEnemy();
     }
 
+    // Moves enemy towards Player
     void MoveEnemy()
     {
         directionToPlayer = (player.transform.position - transform.position);
@@ -63,13 +59,12 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         var get = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
-        get.GainExperience(5);
+        get.GainExperience(10);
         Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-
         if (hitInfo.gameObject.tag == "Player")
         {
             hitInfo.gameObject.SendMessage("TakeDamage", 5);

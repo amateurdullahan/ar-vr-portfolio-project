@@ -7,11 +7,13 @@ public class Spawner : MonoBehaviour
     public Transform spawnPoint;
     public GameObject enemy;
     public int counter;
+    private int wave;
     
     // Start is called before the first frame update
     void Start()
     {
         counter = 0;
+        wave = 1;
     }
 
     // Update is called once per frame
@@ -23,15 +25,16 @@ public class Spawner : MonoBehaviour
     void FixedUpdate()
     {
         counter += 1;
-        if (counter % 750 == 0)
+        if (counter % 500 == 0)
         {
             WaveSpawn();
+            wave++;
         }
     }
 
     void WaveSpawn()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < wave; i++)
         {
             Instantiate(enemy, new Vector3(spawnPoint.position.x + GetModifier(), spawnPoint.position.y + GetModifier()), Quaternion.identity);
         }

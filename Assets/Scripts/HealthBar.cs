@@ -27,7 +27,6 @@ public class HealthBar : MonoBehaviour
     public void SetMaxExperience(int experience)
     {
         experienceSlider.maxValue = experience;
-        experienceSlider.value = experience;
     }
 
 

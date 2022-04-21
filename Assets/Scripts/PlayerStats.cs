@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
 
-	public int maxHealth = 100;
+	public int maxHealth;
 	public int currentHealth;
-	public int maxExperience = 100;
+	public int maxExperience;
 	public int currentExperience;
 	private int remainder;
 	public HealthBar healthBar;
@@ -19,10 +19,13 @@ public class PlayerStats : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		maxHealth = 100;
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
-		level = 0;
+		level = 1;
 		currentExperience = 0;
+		maxExperience = 50;
+		experienceBar.SetMaxExperience(maxExperience);
 	}
 
 
@@ -62,7 +65,7 @@ public class PlayerStats : MonoBehaviour
 		healthBar.SetHealth(maxHealth);
 		currentHealth = maxHealth;
 		currentExperience = 0 + remainder;
-		maxExperience += 25 * level;
+		maxExperience += 10 * level;
 		experienceBar.SetMaxExperience(maxExperience);
 		experienceBar.SetExperience(currentExperience);
 

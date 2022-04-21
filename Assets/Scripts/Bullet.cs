@@ -11,6 +11,8 @@ public class Bullet : MonoBehaviour
         
         if (hitInfo.gameObject.tag == "Enemy")
         {
+            var get = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+            damage = (5 * get.level);
             hitInfo.gameObject.SendMessage("TakeDamage", damage);
         }
 
