@@ -9,8 +9,8 @@ public class Enemy : MonoBehaviour
     public float moveSpeed = 2f;
     private Vector3 directionToPlayer;
     private Vector3 localScale;
-    public int health = 10;
-    //public int maxHealth;
+    public int health;
+    private int maxHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
         localScale = transform.localScale;
         var getP = GameObject.FindWithTag("Player");
         player = getP;
+        maxHealth = health;
     }
 
 
@@ -59,7 +60,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         var get = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
-        get.GainExperience(10);
+        get.GainExperience(maxHealth);
         Destroy(gameObject);
     }
 
