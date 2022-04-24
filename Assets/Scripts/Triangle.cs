@@ -53,6 +53,6 @@ public class Triangle : MonoBehaviour
 
     void TriangleLevel(int level)
     {
-        rateOfFire = rateOfFire - (level * 10);
+        rateOfFire = rateOfFire - (level * 3);
     }
 }

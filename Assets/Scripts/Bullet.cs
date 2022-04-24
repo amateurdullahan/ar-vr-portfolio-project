@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public int damage = 5;
+    public int damage;
+    public PlayerStats player;
+
+    void Start()
+    {
+        var get = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+        player = get;
+    }
 
     void OnCollisionEnter2D(Collision2D hitInfo)
     {
-        
+        damage = player.damage;
         if (hitInfo.gameObject.tag == "Enemy")
         {
-            var get = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
-            damage = (5 * get.level);
             hitInfo.gameObject.SendMessage("TakeDamage", damage);
         }
 

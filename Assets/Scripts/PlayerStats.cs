@@ -13,6 +13,8 @@ public class PlayerStats : MonoBehaviour
 	public HealthBar healthBar;
 	public HealthBar experienceBar;
 	public int level;
+	public GameObject pauseMenu;
+	public int damage;
 	
 	
 
@@ -26,12 +28,13 @@ public class PlayerStats : MonoBehaviour
 		currentExperience = 0;
 		maxExperience = 50;
 		experienceBar.SetMaxExperience(maxExperience);
+		damage = 5;
 	}
 
 
-	public void TakeDamage(int damage)
+	public void TakeDamage(int eDamage)
 	{
-		currentHealth -= damage;
+		currentHealth -= eDamage;
 
 		healthBar.SetHealth(currentHealth);
 	}
@@ -54,6 +57,7 @@ public class PlayerStats : MonoBehaviour
         {
 			remainder = currentExperience - maxExperience;
 			level += 1;
+			pauseMenu.Pause();
 			LevelUp(level);
         }
     }
@@ -65,10 +69,10 @@ public class PlayerStats : MonoBehaviour
 		healthBar.SetHealth(maxHealth);
 		currentHealth = maxHealth;
 		currentExperience = 0 + remainder;
-		maxExperience += 10 * level;
+		maxExperience += 25 * level;
 		experienceBar.SetMaxExperience(maxExperience);
 		experienceBar.SetExperience(currentExperience);
-
+		damage = 5 * level;
     }
 
 }
