@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
     {
         counter = 0;
         wave = 1;
+        Instantiate(enemy, new Vector3(spawnPoint.position.x + GetModifier(), spawnPoint.position.y + GetModifier()), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -36,7 +37,10 @@ public class Spawner : MonoBehaviour
     {
         for (int i = 0; i < wave; i++)
         {
-            Instantiate(enemy, new Vector3(spawnPoint.position.x + GetModifier(), spawnPoint.position.y + GetModifier()), Quaternion.identity);
+            if (i % 2 == 0)
+            {
+                Instantiate(enemy, new Vector3(spawnPoint.position.x + GetModifier(), spawnPoint.position.y + GetModifier()), Quaternion.identity);
+            }
         }
     }
 

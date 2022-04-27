@@ -43,9 +43,10 @@ GameObject:
   - component: {fileID: 8644945066282636656}
   - component: {fileID: -7876770108055433408}
   - component: {fileID: 3717803665605317970}
+  - component: {fileID: 2903681451883842315}
   m_Layer: 0
   m_Name: Square-White
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,6 +139,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2480831015215444124, guid: d0ee19b1892304b4c8c0ccd29b8161a0, type: 3}
   bulletForce: 20
   counter: 0
+  rateOfFire: 0
+  sLevel: 0
+  player: {fileID: 0}
 --- !u!50 &-7876770108055433408
 Rigidbody2D:
   serializedVersion: 4
@@ -174,6 +178,26 @@ MonoBehaviour:
   moveSpeed: 5
   rb: {fileID: 0}
   cam: {fileID: 0}
+--- !u!114 &2903681451883842315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8644945066282636663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0aa716f8aa7db648b1fd5b48d839f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  maxExperience: 0
+  currentExperience: 0
+  healthBar: {fileID: 0}
+  experienceBar: {fileID: 0}
+  level: 0
+  damage: 0
 --- !u!1 &8644945066399840167
 GameObject:
   m_ObjectHideFlags: 0

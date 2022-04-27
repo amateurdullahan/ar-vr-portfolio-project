@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 9206905655472895779}
   m_Layer: 0
   m_Name: Triangle-White
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -202,6 +202,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3876885410406344940, guid: f2b0ac64ea516cb42b809b7ca6b00b79, type: 3}
   bulletForce: 20
   rateOfFire: 5000
+  counter: 0
+  tLevel: 0
 --- !u!1 &9206905656175399849
 GameObject:
   m_ObjectHideFlags: 0

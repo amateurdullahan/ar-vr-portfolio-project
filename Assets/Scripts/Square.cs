@@ -91,7 +91,7 @@ public class Square : MonoBehaviour
 
     void SquareLevel(int level)
     {
-        rateOfFire = rateOfFire - (level * 10);
+        rateOfFire = rateOfFire - (level * 4);
     }
 }
 

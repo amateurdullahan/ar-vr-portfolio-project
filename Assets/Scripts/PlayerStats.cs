@@ -13,8 +13,8 @@ public class PlayerStats : MonoBehaviour
 	public HealthBar healthBar;
 	public HealthBar experienceBar;
 	public int level;
-	public GameObject pauseMenu;
 	public int damage;
+	int counter;
 	
 	
 
@@ -29,7 +29,17 @@ public class PlayerStats : MonoBehaviour
 		maxExperience = 50;
 		experienceBar.SetMaxExperience(maxExperience);
 		damage = 5;
+		counter = 0;
 	}
+
+	void FixedUpdate()
+    {
+		counter += 1;
+		if (counter > 50)
+        {
+			counter = 0;
+        }			
+    }
 
 
 	public void TakeDamage(int eDamage)
@@ -44,7 +54,20 @@ public class PlayerStats : MonoBehaviour
 
 		if (hitInfo.gameObject.tag == "Enemy")
 		{
-			TakeDamage(1);
+			TakeDamage(level);
+		}
+	}
+
+	void OnCollisionStay2D(Collision2D hitInfo)
+	{
+
+		if (hitInfo.gameObject.tag == "Enemy")
+		{
+			if (counter == 50) //Player takes damage on the second.
+            {
+				TakeDamage(level);
+			}
+			
 		}
 	}
 
@@ -57,7 +80,6 @@ public class PlayerStats : MonoBehaviour
         {
 			remainder = currentExperience - maxExperience;
 			level += 1;
-			pauseMenu.Pause();
 			LevelUp(level);
         }
     }

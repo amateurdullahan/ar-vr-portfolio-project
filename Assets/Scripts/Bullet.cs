@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public int damage;
     public PlayerStats player;
 
     void Start()
@@ -15,10 +14,9 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D hitInfo)
     {
-        damage = player.damage;
         if (hitInfo.gameObject.tag == "Enemy")
         {
-            hitInfo.gameObject.SendMessage("TakeDamage", damage);
+            hitInfo.gameObject.SendMessage("TakeDamage", player.damage);
         }
 
         Destroy(gameObject);
