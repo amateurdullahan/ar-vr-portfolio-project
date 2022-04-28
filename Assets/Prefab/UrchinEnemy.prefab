@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 9206905655472895805, guid: cd28d0e25381095408a6d34f32d1e2e6, type: 3}
   moveSpeed: 0.25
-  health: 50
+  health: 100
 --- !u!50 &5493659629442909686
 Rigidbody2D:
   serializedVersion: 4
@@ -129,7 +129,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5493659629442909688}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0

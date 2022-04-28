@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -47,6 +48,11 @@ public class PlayerStats : MonoBehaviour
 		currentHealth -= eDamage;
 
 		healthBar.SetHealth(currentHealth);
+
+		if (currentHealth <= 0)
+        {
+			SceneManager.LoadScene("Menu");
+        }
 	}
 
 	void OnCollisionEnter2D(Collision2D hitInfo)
@@ -86,7 +92,7 @@ public class PlayerStats : MonoBehaviour
 
 	void LevelUp(int level)
     {
-		maxHealth += 50 * level;
+		maxHealth += 10 * level;
 		healthBar.SetMaxHealth(maxHealth);
 		healthBar.SetHealth(maxHealth);
 		currentHealth = maxHealth;
